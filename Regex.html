@@ -1,0 +1,596 @@
+
+
+
+<html> 
+	<head> 
+		<script> 
+			function Validation() { 
+			    var txtPANCard = document.getElementById("txtPANCard");
+                var lblPANCard = document.getElementById("lblPANCard");
+                var regex = /([A-Z]){5}([0-9]){4}([A-Z]){1}$/;
+                if (regex.test(txtPANCard.value)) {
+                    lblPANCard.style.visibility = "hidden";
+                } else {
+                    lblPANCard.style.visibility = "visible";
+                }
+				var txtUserName = document.getElementById("txtUserName");
+                var lblUserName = document.getElementById("lblUserName");
+                regex = /[a-zA-Z][a-zA-Z\s]+$/;
+                if (regex.test(txtUserName.value)) {
+                    lblUserName.style.visibility = "hidden";
+                } else {
+                    lblUserName.style.visibility = "visible";
+                }
+                var txtFirstLastName = document.getElementById("txtFirstLastName");
+                var lblFirstLastName = document.getElementById("lblFirstLastName");
+                regex = /^[A-Z][a-z]*(-|\s)[A-Z][a-z]*$/;
+                if (regex.test(txtFirstLastName.value)) {
+                    lblFirstLastName.style.visibility = "hidden";
+                } else {
+                    lblFirstLastName.style.visibility = "visible";
+                }
+                var txtAddress = document.getElementById("txtAddress");
+                var lblAddress = document.getElementById("lblAddress");
+                regex = /^\s*((?:(?:\d+(?:\x20+\w+\.?)+(?:(?:\x20+STREET|ST|DRIVE|DR|AVENUE|AVE|ROAD|RD|LOOP|COURT|CT|CIRCLE|LANE|LN|BOULEVARD|BLVD)\.?)?)|(?:(?:P\.\x20?O\.|P\x20?O)\x20*Box\x20+\d+)|(?:General\x20+Delivery)|(?:C[\\\/]O\x20+(?:\w+\x20*)+))\,?\x20*(?:(?:(?:APT|BLDG|DEPT|FL|HNGR|LOT|PIER|RM|S(?:LIP|PC|T(?:E|OP))|TRLR|UNIT|\x23)\.?\x20*(?:[a-zA-Z0-9\-]+))|(?:BSMT|FRNT|LBBY|LOWR|OFC|PH|REAR|SIDE|UPPR))?)\,?\s+((?:(?:\d+(?:\x20+\w+\.?)+(?:(?:\x20+STREET|ST|DRIVE|DR|AVENUE|AVE|ROAD|RD|LOOP|COURT|CT|CIRCLE|LANE|LN|BOULEVARD|BLVD)\.?)?)|(?:(?:P\.\x20?O\.|P\x20?O)\x20*Box\x20+\d+)|(?:General\x20+Delivery)|(?:C[\\\/]O\x20+(?:\w+\x20*)+))\,?\x20*(?:(?:(?:APT|BLDG|DEPT|FL|HNGR|LOT|PIER|RM|S(?:LIP|PC|T(?:E|OP))|TRLR|UNIT|\x23)\.?\x20*(?:[a-zA-Z0-9\-]+))|(?:BSMT|FRNT|LBBY|LOWR|OFC|PH|REAR|SIDE|UPPR))?)?\,?\s+((?:[A-Za-z]+\x20*)+)\,\s+(A[LKSZRAP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])\s+(\d+(?:-\d+)?)\s*$/;
+                if (regex.test(txtAddress.value)) {
+                    lblAddress.style.visibility = "hidden";
+                } else {
+                    lblAddress.style.visibility = "visible";
+                }
+                var txtFloating = document.getElementById("txtFloating");
+                var lblFloating = document.getElementById("lblFloating");
+                regex = /^[-+]?[0-9]+[.]?[0-9]*([eE][-+]?[0-9]+)?$/;
+                if (regex.test(txtFloating.value)) {
+                    lblFloating.style.visibility = "hidden";
+                } else {
+                    lblFloating.style.visibility = "visible";
+                }
+                var txtMobileNo = document.getElementById("txtMobileNo");
+                var lblMobileNo = document.getElementById("lblMobileNo");
+                regex = /^[6-9]\d{9}$/;
+                if (regex.test(txtMobileNo.value)) {
+                    lblMobileNo.style.visibility = "hidden";
+                } else {
+                    lblMobileNo.style.visibility = "visible";
+                }
+                var txtLandLine = document.getElementById("txtLandLine");
+                var lblLandLine = document.getElementById("lblLandLine");
+                regex = /\d{5}([- ]*)\d{6}/;
+                if (regex.test(txtLandLine.value)) {
+                    lblLandLine.style.visibility = "hidden";
+                } else {
+                    lblLandLine.style.visibility = "visible";
+                }
+                var txtPostalCode = document.getElementById("txtPostalCode");
+                var lblPostalCode = document.getElementById("lblPostalCode");
+                regex = /^[0-9]{5}(?:-[0-9]{4})?$/;
+                if (regex.test(txtPostalCode.value)) {
+                    lblPostalCode.style.visibility = "hidden";
+                } else {
+                    lblPostalCode.style.visibility = "visible";
+                }
+                var txtCURRENCY = document.getElementById("txtCURRENCY");
+                var lblCURRENCY = document.getElementById("lblCurrency");
+                regex = /^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\.[0-9][0-9])?$/;
+                if (txtCURRENCY!=null&&regex.test(txtCURRENCY.value)) {
+                    lblCURRENCY.style.visibility = "hidden";
+                } else {
+                    lblCURRENCY.style.visibility = "visible";
+                }
+                var txtCreditCard = document.getElementById("txtCreditCard");
+                var lblCreditCard = document.getElementById("lblCreditCard");
+                regex = /^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/;
+                if (regex.test(txtCreditCard.value)) {
+                    lblCreditCard.style.visibility = "hidden";
+                } else {
+                    lblCreditCard.style.visibility = "visible";
+                }
+                var txtCvv = document.getElementById("txtCvv");
+                var lblCvv = document.getElementById("lblCvv");
+                regex = /^[0-9]{3, 4}$/;
+                if (regex.test(txtCvv.value)) {
+                    lblCvv.style.visibility = "hidden";
+                } else {
+                    lblCvv.style.visibility = "visible";
+                }
+                var txtCountryCode = document.getElementById("txtCountryCode");
+                var lblCountryCode = document.getElementById("lblCountryCode");
+                regex = /^(\+?\d{1,3}|\d{1,4})$/;
+                if (regex.test(txtCountryCode.value)) {
+                    lblCountryCode.style.visibility = "hidden";
+                } else {
+                    lblCountryCode.style.visibility = "visible";
+                }
+                var txtHexaDecimalColorCode = document.getElementById("txtHexaDecimalColorCode");
+                var lblHexaDecimalColorCode = document.getElementById("lblHexaDecimalColorCode");
+                regex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+                if (regex.test(txtHexaDecimalColorCode.value)) {
+                    lblHexaDecimalColorCode.style.visibility = "hidden";
+                } else {
+                    lblHexaDecimalColorCode.style.visibility = "visible";
+                }
+                var txtDOB = document.getElementById("txtDob");
+                var lblDOB = document.getElementById("lblDOB");
+                regex = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
+                if (regex.test(txtDOB.value)) {
+                    lblDOB.style.visibility = "hidden";
+                } else {
+                    lblDOB.style.visibility = "visible";
+                }
+                var txtddmmyyyy = document.getElementById("txtddmmyyyy");
+                var lblddmmyyyy = document.getElementById("lblddmmyyyy");
+                regex = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+                if (regex.test(txtddmmyyyy.value)) {
+                    lblddmmyyyy.style.visibility = "hidden";
+                } else {
+                    lblddmmyyyy.style.visibility = "visible";
+                }
+                var txtEmail = document.getElementById("txtEmail");
+                var lblEmail = document.getElementById("lblEmail");
+                regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+                if (regex.test(txtEmail.value)) {
+                    lblEmail.style.visibility = "hidden";
+                } else {
+                    lblEmail.style.visibility = "visible";
+                }
+                var txtFileExtension = document.getElementById("txtFileExtension");
+                var lblFileExtension = document.getElementById("lblFileExtention");
+                regex = /^.*\.(jpg|JPG|gif|GIF|doc|DOC|pdf|PDF)$/;
+                if (regex.test(txtFileExtension.value)) {
+                    lblFileExtension.style.visibility = "hidden";
+                } else {
+                    lblFileExtension.style.visibility = "visible";
+                }
+                var txtFilePath = document.getElementById("txtFilePath");
+                var lblFilePath = document.getElementById("lblFilePath");
+                regex = /^(?:[\w]\:|\\)(\\[a-z_\-\s0-9\.]+)+\.(txt|gif|pdf|doc|docx|xls|xlsx)$/;
+                if (regex.test(txtFilePath.value)) {
+                    lblFilePath.style.visibility = "hidden";
+                } else {
+                    lblFilePath.style.visibility = "visible";
+                }
+                var txtHtmlTag = document.getElementById("txtHtmlTag");
+                var lblHtmlTag = document.getElementById("lblHtmlTag");
+                regex = /( |<([^>]+)>)/ig;
+                if (regex.test(txtHtmlTag.value)) {
+                    lblHtmlTag.style.visibility = "hidden";
+                } else {
+                    lblHtmlTag.style.visibility = "visible";
+                }
+                 var txtHostName = document.getElementById("txtHostName");
+                var lblHostName = document.getElementById("lblHostName");
+                regex = /^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/;
+                if (regex.test(txtHostName.value)) {
+                    lblHostName.style.visibility = "hidden";
+                } else {
+                    lblHostName.style.visibility = "visible";
+                }
+                 var txtHoursMin = document.getElementById("txtHoursMin");
+                var lblHoursMin = document.getElementById("lblHoursMin");
+                regex = /^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/;
+                if (regex.test(txtHoursMin.value)) {
+                    lblHoursMin.style.visibility = "hidden";
+                } else {
+                    lblHoursMin.style.visibility = "visible";
+                }
+                var txtIPAddress = document.getElementById("txtIPAddress");
+                var lblIPAddress = document.getElementById("lblIPAddress");
+                regex = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/;
+                if (regex.test(txtIPAddress.value)) {
+                    lblIPAddress.style.visibility = "hidden";
+                } else {
+                    lblIPAddress.style.visibility = "visible";
+                }
+                var txtIpv6 = document.getElementById("txtIpv6");
+                var lblIpv6 = document.getElementById("lblIpv6");
+                regex = /^((?:2[0-5]{2}|1\d{2}|[1-9]\d|[1-9])\.(?:(?:2[0-5]{2}|1\d{2}|[1-9]\d|\d)\.){2}(?:2[0-5]{2}|1\d{2}|[1-9]\d|\d)):(\d|[1-9]\d|[1-9]\d{2,3}|[1-5]\d{4}|6[0-4]\d{3}|654\d{2}|655[0-2]\d|6553[0-5])$/;
+                if (regex.test(txtIpv6.value)) {
+                    lblIpv6.style.visibility = "hidden";
+                } else {
+                    lblIpv6.style.visibility = "visible";
+                }
+                var txtIpv4 = document.getElementById("txtIpv4");
+                var lblIpv4 = document.getElementById("lblIpv4");
+                regex = /^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[0-9]{1,2})){3}$/;
+                if (regex.test(txtIpv4.value)) {
+                    lblIpv4.style.visibility = "hidden";
+                } else {
+                    lblIpv4.style.visibility = "visible";
+                }
+                var txtUKBank = document.getElementById("txtUKBank");
+                var lblUKBank = document.getElementById("lblUKBank");
+                regex = /^[0-9]{2}[-][0-9]{2}[-][0-9]{2}$/;
+                if (regex.test(txtUKBank.value)) {
+                    lblUKBank.style.visibility = "hidden";
+                } else {
+                    lblUKBank.style.visibility = "visible";
+                }
+                var txtIFSCCode = document.getElementById("txtIFSCCode");
+                var lblIFSCcode = document.getElementById("lblIFSCCode");
+                regex = /^[A-Za-z]{4}\d{7}$/;
+                if (regex.test(txtIFSCCode.value)) {
+                    lblIFSCcode.style.visibility = "hidden";
+                } else {
+                    lblIFSCcode.style.visibility = "visible";
+                }
+                var txtLicenceNo = document.getElementById("txtLicenceNo");
+                var lblLicenceNo = document.getElementById("lblLicenceNo");
+                regex = /^(([A-Z]{2}[0-9]{2})( )|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$/;
+                if (regex.test(txtLicenceNo.value)) {
+                    lblLicenceNo.style.visibility = "hidden";
+                } else {
+                    lblLicenceNo.style.visibility = "visible";
+                }
+                var txtLatitudeLongitude = document.getElementById("txtLatitudeLongitude");
+                var lblLatitudeLongitude = document.getElementById("lblLatitudeLongitude");
+                regex = /^(-?\d+(\.\d+)?),\s*(-?\d+(\.\d+)?)$/;
+                if (regex.test(txtLatitudeLongitude.value)) {
+                    lblLatitudeLongitude.style.visibility = "hidden";
+                } else {
+                    lblLatitudeLongitude.style.visibility = "visible";
+                }
+                 var txtMacAddress = document.getElementById("txtMacAddress");
+                var lblMacAddress = document.getElementById("lblMacAddress");
+                regex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
+                if (regex.test(txtMacAddress.value)) {
+                    lblMacAddress.style.visibility = "hidden";
+                } else {
+                    lblMacAddress.style.visibility = "visible";
+                }
+                var txtmmddyyy = document.getElementById("txtmmddyyy");
+                var lblmmddyyy = document.getElementById("lblmmddyyy");
+                regex = /^((0|1)\d{1})-((0|1|2)\d{1})-((19|20)\d{2})/;
+                if (regex.test(txtmmddyyy.value)) {
+                    lblmmddyyy.style.visibility = "hidden";
+                } else {
+                    lblmmddyyy.style.visibility = "visible";
+                }
+                var txtPassWord = document.getElementById("txtPassWord");
+                var lblPassWord = document.getElementById("lblPassWord");
+                regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)/;
+                if (regex.test(txtPassWord.value)) {
+                    lblPassWord.style.visibility = "hidden";
+                } else {
+                    lblPassWord.style.visibility = "visible";
+                }
+                var txtPassPort = document.getElementById("txtPassPort");
+                var lblPassPort = document.getElementById("lblPassPort");
+                regex = /^[A-PR-WYa-pr-wy][1-9]\\d\\s?\\d{4}[1-9]$/;
+                if (regex.test(txtPassPort.value)) {
+                    lblPassPort.style.visibility = "hidden";
+                } else {
+                    lblPassPort.style.visibility = "visible";
+                }
+                var txtRSAKey = document.getElementById("txtRSAKey");
+                var lblRSAKey = document.getElementById("lblRSAKey");
+                regex = /-{3,}\n([\s\S]*?)\n-{3,}/;
+                if (regex.test(txtRSAKey.value)) {
+                    lblRSAKey.style.visibility = "hidden";
+                } else {
+                    lblRSAKey.style.visibility = "visible";
+                }
+                var txtSpecialCharacter = document.getElementById("txtSpecialCharacter");
+                var lblSpecialCharacter = document.getElementById("lblSpecialCharacter");
+                regex = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]+$/g;
+                if (regex.test(txtSpecialCharacter.value)) {
+                    lblSpecialCharacter.style.visibility = "hidden";
+                } else {
+                    lblSpecialCharacter.style.visibility = "visible";
+                }
+                var txtUrl = document.getElementById("txtUrl");
+                var lblUrl = document.getElementById("lblUrl");
+                regex = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+                if (regex.test(txtUrl.value)) {
+                    lblUrl.style.visibility = "hidden";
+                } else {
+                    lblUrl.style.visibility = "visible";
+                }
+                var txtUKPostal = document.getElementById("txtUKPostal");
+                var lblUKPostal = document.getElementById("lblUKPostal");
+                regex = /^(\d{5}((|-)-\d{4})?)|([A-Za-z]\d[A-Za-z][\s\.\-]?(|-)\d[A-Za-z]\d)|[A-Za-z]{1,2}\d{1,2}[A-Za-z]? \d[A-Za-z]{2}$/;
+                if (regex.test(txtUKPostal.value)) {
+                    lblUKPostal.style.visibility = "hidden";
+                } else {
+                    lblUKPostal.style.visibility = "visible";
+                }
+                var txtVersion = document.getElementById("txtVersion");
+                var lblVersion = document.getElementById("lblVersion");
+                regex = /^\d+(\.\d+){0,2}$/;
+                if (regex.test(txtVersion.value)) {
+                    lblVersion.style.visibility = "hidden";
+                } else {
+                    lblVersion.style.visibility = "visible";
+                }
+                var txtyyyymmdd = document.getElementById("txtyyyymmdd");
+                var lblyyyymmdd = document.getElementById("lblyyyymmdd");
+                regex = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
+                if (regex.test(txtyyyymmdd.value)) {
+                    lblyyyymmdd.style.visibility = "hidden";
+                } else {
+                    lblyyyymmdd.style.visibility = "visible";
+                }
+                var txtAadhar = document.getElementById("txtAadhar");
+                var lblAadhar = document.getElementById("lblAadhar");
+                regex = /^\d{4}\s\d{4}\s\d{4}$/;
+                if (regex.test(txtAadhar.value)) {
+                    lblAadhar.style.visibility = "hidden";
+                } else {
+                    lblAadhar.style.visibility = "visible";
+                }
+                var txtIndVechileNo = document.getElementById("txtIndVechileNo");
+                var lblIndVechileNo = document.getElementById("lblIndVechileNo");
+                regex = /^[A-Z]{2}[ -][0-9]{1,2}(?: [A-Z])?(?: [A-Z]*)? [0-9]{4}$/;
+                if (regex.test(txtIndVechileNo.value)) {
+                    lblIndVechileNo.style.visibility = "hidden";
+                } else {
+                    lblIndVechileNo.style.visibility = "visible";
+                }
+                var txtSqlBasicQueries = document.getElementById("txtSqlBasicQueries");
+                var lblSqlBasicQueries = document.getElementById("lblSqlBasicQueries");
+                regex = /^(?=.*SELECT.*FROM)(?!.*(?:CREATE|DROP|UPDATE|INSERT|ALTER|DELETE|ATTACH|DETACH)).*$/;
+                if (regex.test(txtSqlBasicQueries.value)) {
+                    lblSqlBasicQueries.style.visibility = "hidden";
+                } else {
+                    lblSqlBasicQueries.style.visibility = "visible";
+                }
+                var txtPortNumber = document.getElementById("txtPortNumber");
+                var lblPortNumber = document.getElementById("lblPortNumber");
+                regex = /^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$/;
+                if (regex.test(txtPortNumber.value)) {
+                    lblPortNumber.style.visibility = "hidden";
+                } else {
+                    lblPortNumber.style.visibility = "visible";
+                }
+                var txtddmmmyyyy = document.getElementById("txtddmmmyyyy");
+                var lblddmmmyyyy = document.getElementById("lblddmmmyyyy");
+                regex = /^((31(?!\ (Feb(ruary)?|Apr(il)?|June?|(Sep(?=\b|t)t?|Nov)(ember)?)))|((30|29)(?!\ Feb(ruary)?))|(29(?=\ Feb(ruary)?\ (((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)))))|(0?[1-9])|1\d|2[0-8])\ (Jan(uary)?|Feb(ruary)?|Ma(r(ch)?|y)|Apr(il)?|Ju((ly?)|(ne?))|Aug(ust)?|Oct(ober)?|(Sep(?=\b|t)t?|Nov|Dec)(ember)?)\ ((1[6-9]|[2-9]\d)\d{2})$/;
+                if (regex.test(txtddmmmyyyy.value)) {
+                    lblddmmmyyyy.style.visibility = "hidden";
+                } else {
+                    lblddmmmyyyy.style.visibility = "visible";
+                }
+                var txtTime = document.getElementById("txtTime");
+                var lblTime = document.getElementById("lblTime");
+                regex = /^((([0]?[1-9]|1[0-2])(:|\.)[0-5][0-9]((:|\.)[0-5][0-9])?( )?(AM|am|aM|Am|PM|pm|pM|Pm))|(([0]?[0-9]|1[0-9]|2[0-3])(:|\.)[0-5][0-9]((:|\.)[0-5][0-9])?))$/;
+                if (regex.test(txtTime.value)) {
+                    lblTime.style.visibility = "hidden";
+                } else {
+                    lblTime.style.visibility = "visible";
+                }
+                var txtExpiryMonthYear = document.getElementById("txtExpiryMonthYear");
+                var lblExpiryMonthYear = document.getElementById("lblExpiryMonthYear");
+                regex = /^((0[1-9])|(1[0-2]))\/(\d{4})$/;
+                if (regex.test(txtExpiryMonthYear.value)) {
+                    lblExpiryMonthYear.style.visibility = "hidden";
+                } else {
+                    lblExpiryMonthYear.style.visibility = "visible";
+                }
+                var txtDateTime = document.getElementById("txtDateTime");
+                var lblDateTime = document.getElementById("lblDateTime");
+                regex = /^(\d{2})\.(\d{2})\.(\d{4}) (\d{2}):(\d{2}):(\d{2})$/;
+                if (regex.test(txtTime.value)) {
+                    lblTime.style.visibility = "hidden";
+                } else {
+                    lblTime.style.visibility = "visible";
+                }
+                var txtUSPhoneNo = document.getElementById("txtUSPhoneNo");
+                var lblUSPhoneNo = document.getElementById("lblUSPhoneNo");
+                regex = /^(?:\([2-9]\d{2}\)\ ?|[2-9]\d{2}(?:\-?|\ ?))[2-9]\d{2}[- ]?\d{4}$/;
+                if (regex.test(txtUSPhoneNo.value)) {
+                    lblUSPhoneNo.style.visibility = "hidden";
+                } else {
+                    lblUSPhoneNo.style.visibility = "visible";
+                }
+                var txtVowels = document.getElementById("txtVowels");
+                var lblVowels = document.getElementById("lblVowels");
+                regex = /[aeiou]/gi;
+                if (regex.test(txtVowels.value)) {
+                    lblVowels.style.visibility = "hidden";
+                } else {
+                    lblVowels.style.visibility = "visible";
+                }
+                var txtGender = document.getElementById("txtGender");
+                var lblGender = document.getElementById("lblGender");
+                regex = /^(?:m|M|male|Male|f|F|female|Female)$/;
+                if (regex.test(txtGender.value)) {
+                    lblGender.style.visibility = "hidden";
+                } else {
+                    lblGender.style.visibility = "visible";
+                }
+                var txtIsbn = document.getElementById("txtIsbn");
+                var lblIsbn = document.getElementById("lblIsbn");
+                regex = /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/;
+                if (regex.test(txtIsbn.value)) {
+                    lblIsbn.style.visibility = "hidden";
+                } else {
+                    lblIsbn.style.visibility = "visible";
+                }
+                return false;
+			} 
+		</script> 
+
+		<style type="text/css"> 
+			div { 
+				box-sizing: border-box; 
+				width: 100%; 
+				border: 100px solid black; 
+				float: left; 
+				align-content: center; 
+				align-items: center; 
+			} 
+
+			form { 
+				margin: 0 auto; 
+				width: 600px; 
+			} 
+			.Capital
+            {
+                text-transform: uppercase;
+            }
+            .error
+            {
+                color: Red;
+                visibility: hidden;
+            }
+		</style> 
+	</head> 
+
+	<body> 
+		<h1 style="text-align: center;">REGISTRATION FORM</h1> 
+		<label>User name:</label>
+		<input name="txtUSERNAME" type="text" id="txtUserName" />
+        <span id="lblUserName" class="error">Invalid UserName</span>
+        <hr />
+        <label>PAN card no.:</label>
+		<input name="txtPANCard" type="text" id="txtPANCard" class="Capital" />
+        <span id="lblPANCard" class="error">Invalid PAN Number</span>
+        <hr/><label>Lastname, firstname:</label>
+        <input name="txtFIRSTLASTNAME" type="text" id="txtFirstLastName"/>
+        <span id="lblFirstLastName" class="error">Invalid Lastname, firstname</span>
+        <hr/><label>Address:</label>
+        <input name="txtADDRESS" type="text" id="txtAddress"/>
+        <span id="lblAddress" class="error">Invalid Address</span>
+        <hr/><label>Floating Point Value:</label>
+        <input name="txtFLOATING" type="text" id="txtFloating"/>
+        <span id="lblFloating" class="error">Invalid Floating Point</span>
+        <hr/><label>Mobile no.:</label>
+        <input name="txtMOBILENO" type="text" id="txtMobileNo"/>
+        <span id="lblMobileNo" class="error">Invalid MobileNo</span>
+        <hr/><label>Landline no.:</label>
+        <input name="txtLANDLINE" type="text" id="txtLandLine"/>
+        <span id="lblLandLine" class="error">Invalid Landline No</span>
+        <hr/><label>Postal Code:</label>
+        <input name="txtPOSTALCODE" type="text" id="txtPostalCode"/>
+        <span id="lblPostalCode" class="error">Invalid Postal Code</span>
+        <hr/><label>Currency:</label>
+        <input name="txtCURRENCY" type="text" id="txtCURRENCY"/>
+        <span id="lblCurrency" class="error">Invalid Currency</span>
+        <hr/><label>Credit card no.:</label>
+        <input name="txtCREDITCARD" type="text" id="txtCreditCard"/>
+        <span id="lblCreditCard" class="error">Invalid Credit Card No.</span>
+        <hr/><label>CVV number:</label>
+        <input name="txtCVV" type="text" id="txtCvv"/>
+        <span id="lblCvv" class="error">Invalid CVV</span>
+        <hr/><label>Country code:</label>
+        <input name="txtCOUNTRYCODE" type="text" id="txtCountryCode"/>
+        <span id="lblCountryCode" class="error">Invalid Country Code</span>
+        <hr/><label>HexaDecimal color code:</label>
+        <input name="txtHEXADECIMALCOLORCODE" type="text" id="txtHexaDecimalColorCode"/>
+        <span id="lblHexaDecimalColorCode" class="error">Invalid Color Code</span>
+        <hr/><label>Date of birth:</label>
+        <input name="txtDOB" type="text" id="txtDob"/>
+        <span id="lblDOB" class="error">Invalid Date of Birth</span>
+        <hr/><label>DD/MM/YYY:</label>
+        <input name="txtDDMMYYY" type="text" id="txtddmmyyyy"/>
+        <span id="lblddmmyyyy" class="error">Invalid Date format</span>
+        <hr/><label>Email id:</label>
+        <input name="txtEMAIL" type="text" id="txtEmail"/>
+        <span id="lblEmail" class="error">Invalid Email</span>
+        <hr/><label>File nmae with extention</label>
+        <input name="txtFILEEXTENTION" type="text" id="txtFileExtension"/>
+        <span id="lblFileExtention" class="error">Invalid File Extension</span>
+        <hr/><label>File Path:</label>
+        <input name="txtFILEPATH" type="text" id="txtFilePath"/>
+        <span id="lblFilePath" class="error">Invalid file path</span>
+        <hr/><label>Gender:</label>
+        <input name="txtGENDER" type="text" id="txtGender"/>
+        <span id="lblGender" class="error">Invalid Gender</span>
+        <hr/><label>Html Tags:</label>
+        <input name="txtHTMLTAG" type="text" id="txtHtmlTag"/>
+        <span id="lblHtmlTag" class="error">Invalid Html Tag</span>
+        <hr/><label>Host Name:</label>
+         <input name="txtHOSTNAME" type="text" id="txtHostName"/>
+        <span id="lblHostName" class="error">Invalid Host Name</span>
+        <hr/><label>Hours Minutes:</label>
+         <input name="txtHOURSMIN" type="text" id="txtHoursMin"/>
+        <span id="lblHoursMin" class="error">Invalid Hours and Minutes</span>
+        <hr/><label>IP Address:</label>
+        <input name="txtIPADDRESS" type="text" id="txtIPAddress"/>
+        <span id="lblIPAddress" class="error">Invalid IP Address</span>
+        <hr/><label>IPv4 Address:</label>
+        <input name="txtIPV4" type="text" id="txtIpv4"/>
+        <span id="lblIpv4" class="error">Invalid IPV4</span>
+        <hr/><label>IPv6 Address:</label>
+        <input name="txtIPV6" type="text" id="txtIpv6"/>
+        <span id="lblIpv6" class="error">Invalid IPV6</span>
+        <hr/><label>UK Bank Sort code:</label>
+        <input name="txtUKBANK" type="text" id="txtUKBank"/>
+        <span id="lblUKBank" class="error">Invalid UK Bank Sort code</span>
+        <hr/><label>IFSC Code:</label>
+        <input name="txtIFSCCode" type="text" id="txtIFSCCode"/>
+        <span id="lblIFSCCode" class="error">Invalid IFSC Code</span>
+        <hr/><label>Key Value Pair:</label>
+        <input name="txtLICENCENO" type="text" id="txtLicenceNo"/>
+        <span id="lblLicenceNo" class="error">Invalid Licence No</span>
+        <hr/><label>Latitude/Longitude:</label>
+        <input name="txtLATITUDELONGITUDE" type="text" id="txtLatitudeLongitude"/>
+        <span id="lblLatitudeLongitude" class="error">Invalid Latitude and Longitude</span>
+        <hr/><label>MAC Address:</label>
+        <input name="txtMACADDRESS" type="text" id="txtMacAddress"/>
+        <span id="lblMacAddress" class="error">Invalid MAC Address</span>
+        <hr/><label>MM/DD/YYYY:</label>
+        <input name="txtMMDDYYY" type="text" id="txtmmddyyy"/>
+        <span id="lblmmddyyy" class="error">Invalid MM-DD-YYYY format</span>
+        <hr/><label>Password:</label>
+        <input name="txtPASSWORD" type="text" id="txtPassWord"/>
+        <span>(Must contain 1 special char, 1 number, 1 uppercase, 1 lowercase)</span>
+        <span id="lblPassWord" class="error">Invalid Password </span>
+        <hr/><label>Passport no.:</label>
+        <input name="txtPASSPORT" type="text" id="txtPassPort"/>
+        <span id="lblPassPort" class="error">Invalid Passport Number</span>
+        <hr/><label>RSA Key:</label>
+        <input name="txtRSAKEY" type="text" id="txtRSAKey"/>
+        <span id="lblRSAKey" class="error">Invalid RSA Key</span>
+        <hr/><label>Special Characters:</label>
+        <input name="txtSPECIALCHANRACTER" type="text" id="txtSpecialCharacter"/>
+        <span id="lblSpecialCharacter" class="error">Invalid Special Character</span>
+        <hr/><label>URL:</label>
+        <input name="txtURL" type="text" id="txtUrl"/>
+        <span id="lblUrl" class="error">Invalid Url</span>
+        <hr/><label>UK postal/zip codes:</label>
+        <input name="txtUKPOSTAL" type="text" id="txtUKPostal"/>
+        <span id="lblUKPostal" class="error">Invalid Canadian, American and UK postal/zip codes </span>
+        <hr/><label>Version no.:</label>
+        <input name="txtVERSION" type="text" id="txtVersion"/>
+        <span id="lblVersion" class="error">Invalid Version</span>
+        <hr/><label>Vowels:</label>
+         <input name="txtVOWELS" type="text" id="txtVowels"/>
+        <span id="lblVowels" class="error">Invalid Vowels</span>
+        <hr/><label>YYYY/MM/DD:</label>
+        <input name="txtYYYYMMDD" type="text" id="txtyyyymmdd"/>
+        <span id="lblyyyymmdd" class="error">Invalid YYYY/MM/DD format</span>
+        <hr/><label>Aadhar no.:</label>
+        <input name="txtAADHAR" type="text" id="txtAadhar"/>
+        <span id="lblAadhar" class="error">Invalid Aadhar No.</span>
+        <hr/><label>Vechile no.:</label>
+        <input name="txtINDVechieNo" type="text" id="txtIndVechileNo"/>
+        <span id="lblIndVechileNo" class="error">Invalid Indian Vechile Number</span>
+        <hr/><label>SQL Basic Queries:</label>
+         <input name="txtSQLQUERIES" type="text" id="txtSqlBasicQueries"/>
+        <span id="lblSqlBasicQueries" class="error">Invalid SQL Basic Quires</span>
+        <hr/><label>HTML Click Events:</label>
+         <input name="txtPortNumber" type="text" id="txtPortNumber"/>
+        <span id="lblPortNumber" class="error">Invalid Port number</span>
+        <hr/><label>dd MMM yyyy:</label>
+        <input name="txtDDMMMYYY" type="text" id="txtddmmmyyyy"/>
+        <span id="lblddmmmyyyy" class="error">Invalid dd MMM yyyy format</span>
+        <hr/><label>Time:</label>
+        <input name="txtTIME" type="text" id="txtTime"/>
+        <span id="lblTime" class="error">Invalid Time format - Matches (1:01 AM | 23:52:01 | 03.24.36 AM)</span>
+        <hr/><label>Expiry Month Year:</label>
+        <input name="txtEXPIRY" type="text" id="txtExpiryMonthYear"/>
+        <span id="lblExpiryMonthYear" class="error">Invalid Expiry MM/YYYY format</span>
+        <hr/><label>DateTime:</label>
+        <input name="txtDATETIME" type="text" id="txtDateTime"/>
+        <span id="lblDateTime" class="error">Invalid DateTime Format - Matches (31/12/2003 11:59:59 PM | 29-2-2004 | 01:45:02)</span>
+        <hr/><label>US Phone Number:</label>
+        <input name="txtUSPHONENUMBER" type="text" id="txtUSPhoneNo"/>
+        <span id="lblUSPhoneNo" class="error">Invalid US Phone Number</span>
+        <hr/><label>ISBN:</label>
+        <input name="txtISBN" type="text" id="txtIsbn"/>
+        <span id="lblIsbn" class="error">Invalid ISBN</span>
+        <hr/>
+        <input type="button" id="btnSubmit" value="Submit" onclick="Validation()" />
+	</body> 
+</html> 
+

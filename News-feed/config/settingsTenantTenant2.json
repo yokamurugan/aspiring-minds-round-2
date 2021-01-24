@@ -1,0 +1,14 @@
+{
+  "tenantConfig": {
+    "tenantCode": "Tenant1"
+ },
+  "dbConfig":{
+    "dbType":"MYSQL",
+    "host": "localhost",
+    "port": "3306",
+    "user": "root",
+    "password": "",
+    "database": "Tenant2",
+    "poolMax": 10
+  }
+}

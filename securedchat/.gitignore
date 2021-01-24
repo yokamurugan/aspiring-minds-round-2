@@ -1,0 +1,30 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Maven
+log/
+target/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Mac
+.DS_Store
